@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Haruki Ueda
+# SPDX-License-Identifier: BSD-3-Clause
+import sys
+
+nums = []
+
+for line in sys.stdin:
+    line = line.strip()
+    if not line:
+        continue
+    try:
+        nums.append(float(line))
+    except:
+        pass
+
+if not nums:
+    sys.exit()
+
+total = sum(nums)
+avg = total / len(nums)
+mn = min(nums)
+mx = max(nums)
+
+print ("\nStatistics")
+print ("----------")
+print (f"Count: {len(nums)}")
+print (f"Sum: {total}")
+print (f"Average: {avg}")
+print (f"Min: {mn}")
+print (f"Max: {mx}")
+
